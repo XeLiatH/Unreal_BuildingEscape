@@ -19,12 +19,13 @@ void UWorldPosition::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UE_LOG(LogTemp, Display, TEXT("Hello there!"));
-	UE_LOG(LogTemp, Warning, TEXT("Hello there!"));
-	UE_LOG(LogTemp, Error, TEXT("Hello there!"));
+	FString Log = TEXT("Hello there!");
+	FString* PtrLog = &Log;
 
-	// ...
-	
+	UE_LOG(LogTemp, Warning, TEXT("%s"), **PtrLog);
+
+	UE_LOG(LogTemp, Warning, TEXT("%d"), (*PtrLog).Len());
+	UE_LOG(LogTemp, Warning, TEXT("%d"), PtrLog->Len());
 }
 
 
