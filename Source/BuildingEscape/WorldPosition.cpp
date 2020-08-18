@@ -19,6 +19,10 @@ void UWorldPosition::BeginPlay()
 {
 	Super::BeginPlay();
 
+	UE_LOG(LogTemp, Display, TEXT("Hello there!"));
+	UE_LOG(LogTemp, Warning, TEXT("Hello there!"));
+	UE_LOG(LogTemp, Error, TEXT("Hello there!"));
+
 	// ...
 	
 }
